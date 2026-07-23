@@ -1,0 +1,32 @@
+این متن را داخل AndroidManifest.xml پروژه (که npx cap add android برایت ساخته) اضافه کن:
+مسیر فایل: android/app/src/main/AndroidManifest.xml
+
+۱) این permission ها را بالای فایل، همان جایی که <uses-permission android:name="android.permission.INTERNET" /> هست، اضافه کن:
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+۲) داخل تگ <application> ... </application>، بعد از تگ <activity android:name=".MainActivity" ...> ... </activity> موجود، این سه بلوک را اضافه کن (این‌ها fully-qualified نیستند چون با "." شروع می‌شوند یعنی از پکیج com.peyam.app):
+
+    <service
+        android:name=".PeyamFirebaseMessagingService"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+
+    <activity
+        android:name=".CallActivity"
+        android:exported="false"
+        android:excludeFromRecents="true"
+        android:launchMode="singleTop"
+        android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+    <receiver
+        android:name=".PeyamCallActionReceiver"
+        android:exported="false" />
+
+نکته: خود تگ <activity android:name=".MainActivity" ...> که Capacitor ساخته را دست نزن و پاک نکن — همان می‌ماند.

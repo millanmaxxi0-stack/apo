@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#128C7E"
+    android:gravity="center_horizontal">
+
+    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1.2" />
+
+    <TextView
+        android:id="@+id/call_caller_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caller"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/call_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Incoming call"
+        android:textColor="#E0F2F1"
+        android:textSize="16sp" />
+
+    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1.5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="64dp"
+        android:paddingLeft="48dp"
+        android:paddingRight="48dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/call_decline_btn"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_weight="1"
+            android:text="✕"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E53935" />
+
+        <View android:layout_width="32dp" android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/call_accept_btn"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_weight="1"
+            android:text="✓"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#43A047" />
+
+    </LinearLayout>
+
+</LinearLayout>

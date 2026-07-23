@@ -1,0 +1,14 @@
+مسیر فایل: android/build.gradle (فایل build.gradle اصلی، نه android/app/build.gradle)
+
+داخل بلوک buildscript { dependencies { ... } } این خط را اضافه کن:
+
+    classpath 'com.google.gms:google-services:4.4.2'
+
+نمونه کامل بعد از اضافه‌کردن (فقط برای نمونه — بقیه خطوط موجود دست نخورده می‌مانند):
+
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:...'   // این خط از قبل هست
+        classpath 'com.google.gms:google-services:4.4.2'  // این خط را اضافه کن
+    }
+}

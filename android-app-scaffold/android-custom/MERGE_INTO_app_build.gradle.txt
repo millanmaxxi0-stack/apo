@@ -1,0 +1,23 @@
+مسیر فایل: android/app/build.gradle
+
+۱) خط زیر را در همان بالای فایل، کنار apply plugin: 'com.android.application' اضافه کن:
+
+apply plugin: 'com.google.gms.google-services'
+
+(فایل باید شبیه این شروع شود:)
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+۲) داخل بلوک dependencies { ... } این خطوط را اضافه کن:
+
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+۳) applicationId را چک کن که با چیزی که در مرحله‌ی npx cap init دادی یکی باشد (باید com.peyam.app باشد مگر اسم دیگری خواستی)، مثلاً:
+
+    defaultConfig {
+        applicationId "com.peyam.app"
+        ...
+    }

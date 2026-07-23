@@ -1,0 +1,12 @@
+{
+  "appId": "com.peyam.app",
+  "appName": "Peyam",
+  "webDir": "www",
+  "server": {
+    "url": "https://my-p-production.up.railway.app",
+    "cleartext": false
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
